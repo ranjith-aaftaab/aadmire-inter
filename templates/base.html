@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admire - Interior & Commercial Decor</title>
+    <!-- Stylesheets -->
+    <link href="../static/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/assets/css/style.css" rel="stylesheet">
+    <!-- Responsive File -->
+    <link href="../static/assets/css/responsive.css" rel="stylesheet">
+    <!-- Color File -->
+    <link href="../static/assets/css/color.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" href="../static/assets/img/logo/admire-favicon.png" type="image/x-icon">
+    <link rel="icon" href="../static/assets/img/logo/admire-favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <style>
+        .sr-testimonial-container {
+      max-width: 1200px;
+      margin: auto;
+      overflow: hidden;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .sr-testimonial-carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .sr-testimonial-card {
+      background: #2e2e2e;
+      color: #fff;
+      border-radius: 10px;
+      margin: 0 10px;
+      flex: 0 0 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      position: relative;
+    }
+
+    .sr-testimonial-stars {
+      background: #952683;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .sr-testimonial-content {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .sr-testimonial-bottom {
+      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.05));
+      text-align: center;
+      padding: 20px 10px 10px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .sr-testimonial-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+    }
+
+    .sr-testimonial-role {
+      color: #ffd700;
+      font-size: 14px;
+    }
+
+    .sr-testimonial-name {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .sr-testimonial-nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .sr-testimonial-btn {
+      background: #fff;
+      border: none;
+      margin: 0 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .sr-testimonial-card {
+        flex: 0 0 50%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .sr-testimonial-card {
+        flex: 0 0 33.3333%;
+      }
+    }
+
+
+    .client-map-section {
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .map-text {
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+
+    .map-text h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #0f2d59;
+    }
+
+    .map-text p {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .map-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .south-map {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width:600px) and (min-width:0px) {
+        .south-map {
+            width: 100%;
+            height: 100vh;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .client-point {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background: #902783;
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 8px;
+        opacity: 0.9;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .client-point:hover {
+        transform: translate(-50%, -50%) scale(1.05);
+        background: #e7c900;
+        color: #000;
+    }
+
+    .sr-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sr-boxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .sr-box {
+        /* background-color: #fff;
+      border: 1px dashed #ccc; */
+        background-color: #000000;
+        border: 1px solid #ab137e;
+        border-radius: 12px;
+        text-align: center;
+        padding: 20px 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 0 transparent;
+        cursor: pointer;
+    }
+
+    .sr-box img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .sr-box p {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    /* .sr-box p:hover {
+      font-size: 14px;
+      font-weight: 500;
+      color: #000;
+    } */
+
+    .sr-box:hover {
+        color: black;
+        background-color: rgb(74, 74, 74);
+        transform: translateY(-5px);
+        /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); */
+        box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    }
+
+    .sr-box:hover img {
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+        .sr-boxes {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .sr-box p {
+            font-size: 13px;
+        }
+    }
+
+    .cont {
+        height: 55vh;
+        text-align: left;
+        padding: 10px;
+        background-color: #d7d7d7;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- Main Header -->
+        <header class="main-header header-style-four">
+            <!-- Header Upper -->
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo-box">
+                            <div class="logo"><a href="index.html"><img src="../static/assets/img/logo/admire-logo.png" alt=""></a>
+                            </div>
+                        </div>
+                        <!--Nav Box-->
+                        <div class="nav-outer clearfix">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><img src="../static/assets/images/icons/icon-bar.png" alt=""></div>
+
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation">
+                                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                                        <li><a href="{{ url_for('who_we_are') }}">Who we are</a></li>
+                                        <li><a href="{{ url_for('what_we_do') }}">What we do</a></li>
+                                        <li><a href="{{ url_for('clients') }}">Our Clients</a></li>
+                                        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Upper-->
+
+            <!-- Sticky Header  -->
+            <div class="sticky-header">
+                <div class="auto-container clearfix">
+                    <!--Logo-->
+                    <div class="logo float-left">
+                        <a href="{{ url_for('index') }}" title=""><img src="../static/assets/img/logo/admire-logo.png" alt="" title=""></a>
+                    </div>
+                    <!--Right Col-->
+                    <div class="float-right">
+                        <!-- Main Menu -->
+                        <nav class="main-menu clearfix">
+                        </nav>
+                        <!-- Main Menu End-->
+                    </div>
+                </div>
+            </div><!-- End Sticky Menu -->
+
+            <!-- Mobile Menu  -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+                <div class="close-btn"><span class="icon flaticon-remove"></span></div>
+
+                <nav class="menu-box">
+                    <div class="nav-logo"><a href="{{ url_for('index') }}"><img src="../static/assets/img/logo/admire-logo.png" alt=""
+                                title=""></a>
+                    </div>
+                    <div class="menu-outer"></div>
+                    <!--Social Links-->
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div><!-- End Mobile Menu -->
+
+            <div class="nav-overlay">
+                <div class="cursor"></div>
+                <div class="cursor-follower"></div>
+            </div>
+        </header>
+        <!-- End Main Header -->
+
+        <!-- Hidden Sidebar -->
+        <section class="hidden-sidebar close-sidebar">
+            <div class="wrapper-box">
+                <div class="hidden-sidebar-close"><span class="flaticon-remove"></span></div>
+                <div class="logo"><a href="#"><img src="../static/assets/img/logo/admire-logo.png" alt=""></a></div>
+                <div class="content">
+                    <div class="about-widget-two sidebar-widget">
+                        <h3>The Most Talented Interior <br> Designers & Architects</h3>
+                        <div class="text">We denounce with righteous indignation and dislike men who we are to beguiled
+                            demoralized by the charms of pleasures that moment, so we blinded desires, that they
+                            indignations.</div>
+                    </div>
+                    <!-- News Widget -->
+                    <div class="news-widget sidebar-widget">
+                        <div class="widget-title">News & Updates</div>
+                        <div class="post-wrapper">
+                            <div class="image"><a href="#"><img src="../static/assets/images/resource/image-18.jpg" alt=""></a>
+                            </div>
+                            <div class="category">Architecture</div>
+                            <h4><a href="#">Our practice Offers You <br> Exclusive Designs</a></h4>
+                        </div>
+                        <div class="post-wrapper">
+                            <div class="image"><a href="#"><img src="../static/assets/images/resource/image-19.jpg" alt=""></a>
+                            </div>
+                            <div class="category">Interior</div>
+                            <h4><a href="#">Tips For Self-Made Home <br>Interior Layouts</a></h4>
+                        </div>
+                    </div>
+                    <!-- Newsletter Widget -->
+                    <div class="newsletter-widget">
+                        <div class="widget-title">Newsletter Subscription</div>
+                        <form action="#">
+                            <input type="email" placeholder="Enter Email Address">
+                            <button class="theme-btn btn-style-one"><span>Subscribe Us</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Search Popup-->
+        <div id="search-popup" class="search-popup">
+            <div class="close-search theme-btn"><span class="flaticon-remove"></span></div>
+            <div class="popup-inner">
+                <div class="overlay-layer"></div>
+                <div class="search-form">
+                    <form method="post" action="#">
+                        <div class="form-group">
+                            <fieldset>
+                                <input type="search" class="form-control" name="search-input" value=""
+                                    placeholder="Search Here" required>
+                                <input type="submit" value="Search Now!" class="theme-btn">
+                            </fieldset>
+                        </div>
+                    </form>
+                    <br>
+                    <h3>Recent Search Keywords</h3>
+                    <ul class="recent-searches">
+                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">Idea</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Growth</a></li>
+                        <li><a href="#">Plan</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+    {% block content %}
+    {% endblock%}
+
+    <!-- Main Footer -->
+<footer class="main-footer">
+    <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+            <div class="row clearfix">
+
+                <!--Column-->
+                <div class="column col-lg-6">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="widget about-widget">
+                                <!-- <h3 class="widget-title">About Admire</h3> -->
+                                <a href="{{ url_for('index') }}"><img src="../static/assets/img/logo/logo.png" alt="" style="border-radius: 10px;
+    padding: 0px 0px 15px;"></a>
+                                <div class="text">At Admire Interiors, we believe that every space tells a story. For
+                                    over two decades, we’ve been redefining interiors across Chennai and India — with
+                                    craftsmanship, innovation, and personalized service.</div>
+                                <div class="social-links">
+                                    <ul>
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="footer-widget links-widget pl-lg-5">
+                                <h3 class="widget-title">Quick Links</h3>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                                        <li><a href="{{ url_for('who_we_are') }}">Who we are</a></li>
+                                        <li><a href="{{ url_for('what_we_do') }}">What we do</a></li>
+                                        <li><a href="{{ url_for('clients') }}">Our Clients</a></li>
+                                        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Column-->
+                <div class="column col-lg-3">
+                    <div class="footer-widget contact-widget pl-lg-5">
+                        <h3 class="widget-title">Contact us</h3>
+                        <div class="widget-content">
+                            <ul>
+                                <li>Address: <br>30, pillayar kovil st, kavangarai west, puzhal, chennai - 600066</li>
+                                <li>Phone: <br><a href="tel:+91 9865804190">+91 9865804190</a></li>
+                                <li>Email: <br><a href="mailto:admireinterior03@gmail.com">admireinterior03@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Column-->
+                <div class="col-md-3">
+                    <div class="footer-widget links-widget pl-lg-5">
+                        <h3 class="widget-title">Who we are</h3>
+                        <div class="widget-content">
+                            <ul>
+                                <li><a href="{{ url_for('who_we_are') }}">Restaurant</a></li>
+                                <li><a href="{{ url_for('who_we_are') }}">Hospitals & Clinics</a></li>
+                                <li><a href="{{ url_for('who_we_are') }}">Fitness & Gyms</a></li>
+                                <li><a href="{{ url_for('who_we_are') }}">Saloons & Spas</a></li>
+                                <li><a href="{{ url_for('who_we_are') }}">Corporates</a></li>
+                                <li><a href="{{ url_for('who_we_are') }}">Residences</a></li>
+                                <li><a href="{{ url_for('who_we_are') }}">Office Planning</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="auto-container">
+        <div class="footer-bottom">
+            <div class="copyright"><a href="#">ADMIRE</a> - Design & Architect (c) All rights reserved. &nbsp;&nbsp;&nbsp;Developed By <a href="https://martxai.tech/" target="_blank" style="color:yellow">MarteX Software Enterprises.</a></div>
+        </div>
+    </div>
+</footer>
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-right-arrow"></span></div>
+
+<script src="../static/assets/js/jquery.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+<script src="../static/assets/js/bootstrap-select.min.js"></script>
+<script src="../static/assets/js/jquery.fancybox.js"></script>
+<script src="../static/assets/js/isotope.js"></script>
+<script src="../static/assets/js/owl.js"></script>
+<script src="../static/assets/js/appear.js"></script>
+<script src="../static/assets/js/wow.js"></script>
+<script src="../static/assets/js/lazyload.js"></script>
+<script src="../static/assets/js/scrollbar.js"></script>
+<script src="../static/assets/js/TweenMax.min.js"></script>
+<script src="../static/assets/js/swiper.min.js"></script>
+<script src="../static/assets/js/script.js"></script>
+
+<!--Google Map APi Key-->
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyCJRG4KqGVNvAPY4UcVDLcLNXMXk2ktNfY"></script>
+<script src="../static/assets/js/gmaps.html"></script>
+<script src="../static/assets/js/map-script.html"></script>
+
+<script>
+    const carousel = document.getElementById('sr-testimonial-carousel');
+    const cards = document.querySelectorAll('.sr-testimonial-card');
+    const totalOriginalSlides = cards.length;
+  
+    let currentIndex = 0;
+    let cardWidth;
+  
+    function cloneSlides() {
+      for (let i = 0; i < 3; i++) {
+        const clone = cards[i].cloneNode(true);
+        carousel.appendChild(clone);
+      }
+    }
+  
+    function updateCarousel(animate = true) {
+      cardWidth = cards[0].offsetWidth + 20;
+      carousel.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+      carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+  
+    function nextSlide() {
+      currentIndex++;
+      updateCarousel();
+  
+      if (currentIndex === totalOriginalSlides) {
+        setTimeout(() => {
+          currentIndex = 0;
+          updateCarousel(false);
+        }, 500); // Wait for transition to finish before resetting
+      }
+    }
+  
+    function prevSlide() {
+      if (currentIndex === 0) {
+        currentIndex = totalOriginalSlides;
+        updateCarousel(false);
+      }
+      currentIndex--;
+      updateCarousel();
+    }
+  
+    cloneSlides(); // Clone initial slides for smooth looping
+  
+    // Auto slide every 4 seconds
+    setInterval(nextSlide, 4000);
+  
+    window.addEventListener('resize', () => {
+      updateCarousel(false);
+    });
+  
+    // Initialize position
+    updateCarousel(false);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ <!-- Page Title -->
+ <section class="page-title" style="background-image: url(../static/assets/images/background/bg-20.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="content-wrapper">
+                <div class="title">
+                    <h1>Contact Us</h1>
+                </div>
+                <ul class="bread-crumb">
+                    <li class="home"><a href="{{ url_for('index') }}"><span class="far fa-home"></span></a></li>
+                    <li>Contact</li>
+                </ul>
+            </div>                    
+        </div>
+    </div>
+</section>
+<!-- Page Title -->
+
+<!-- Contact Section -->
+<section class="contact-section style-two">
+    <div class="auto-container">
+        <div class="wrapper-box">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="image"><img src="../static/assets/images/resource/image-76.jpg" alt=""></div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form-area">
+                        <div class="sec-title small">
+                            <span class="sec-title-dec-two"></span>
+                            <h2>Do You need Our Help For <br> The Next Project? Get In Touch!</h2>
+                            <div class="text">Beyond more stoic this along goodness this sed ipsum mongos <br> flusterd impressive man farcrud opened. </div>
+                        </div>
+                        <form method="post" action="#" class="contact-form">
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <input type="text" name="name" placeholder="Name" required="">
+                                </div>
+                                
+                                <div class="col-md-12 form-group">
+                                    <input type="email" name="email" placeholder="Email Address" required="">
+                                </div>
+
+                                <div class="col-md-12 form-group">
+                                    <input type="text" name="subject" placeholder="Subject" required="">
+                                </div>
+
+                                <div class="col-md-12 form-group">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+        
+                                <div class="col-md-12 form-group-two">
+                                    <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span>SEND MESSAGE</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+        <div class="contact-info-two">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="content">
+                        <h2 style="background: linear-gradient(90deg, #792987, #bd237e);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Head Office</h2>
+                        <div class="text" style="color:white">No matter how big or small your requirement, Admire Interiors is ready to partner with you.</div>
+                        <ul class="list">
+                            <li style="color:white"><i class="far fa-map-pin"></i>Address: 30, Pillayar kovil st, kavangarai west, Puzhal, Chennai - 600066</li>
+                            <li style="color:white"><i class="far fa-phone"></i>Phone: +91 9865804190</li>
+                            <li style="color:white"><i class="far fa-envelope"></i>Email: admireinterior03@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="content">
+                        <h2 style="background: linear-gradient(90deg, #792987, #bd237e);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Branch Office</h2>
+                        <div class="text" style="color:white">No matter how big or small your requirement, Admire Interiors is ready to partner with you.</div>
+                        <ul class="list">
+                            <li style="color:white"><i class="far fa-map-pin"></i>Address: 30, Pillayar kovil st, kavangarai west, Puzhal, Chennai - 600066.</li>
+                            <li style="color:white"><i class="far fa-phone"></i>Phone: +91 9865804190</li>
+                            <li style="color:white"><i class="far fa-envelope"></i>Email: inquiry@admire.net</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

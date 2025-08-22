@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(../static/assets/images/background/bg-20.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="content-wrapper">
+                <div class="title">
+                    <h1>Our Clients</h1>
+                </div>
+                <ul class="bread-crumb">
+                    <li class="home"><a href="{{ url_for('index') }}"><span class="far fa-home"></span></a></li>
+                    <li>Our Clients</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page Title -->
+<br>
+
+<section class="client-map-section">
+    <div class="map-text">
+        <h2 style="background: linear-gradient(90deg, #792987, #bd237e);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+            Our Reach in South India</h2>
+        <p style="color:white">
+            We have a strong presence across the southern states of
+            India. With a growing number of trusted clients in Tamil
+            Nadu, Kerala, Karnataka, Telangana, and Andhra Pradesh, our
+            network continues to expand.
+        </p>
+    </div>
+
+    <div class="map-container">
+        <img src="../static/assets/img/clients/south-india-map.jpg" alt="South India Map" class="south-map" />
+
+        <!-- Client Points -->
+        <div class="client-point" style="top: 66%; left: 47%;">
+            <span>Tamil Nadu<br>+250 Clients</span>
+        </div>
+
+        <div class="client-point" style="top: 60%; left: 19%;">
+            <span>Kerala<br>+180 Clients</span>
+        </div>
+
+        <div class="client-point" style="top: 35%; left: 22%;">
+            <span>Karnataka<br>+210 Clients</span>
+        </div>
+
+        <div class="client-point" style="top: 25%; left: 55%;">
+            <span>Telangana<br>+160 Clients</span>
+        </div>
+
+        <div class="client-point" style="top: 45%; left: 60%;">
+            <span>Andhra Pradesh<br>+190 Clients</span>
+        </div>
+    </div>
+</section>
+<br>
+<!--Start Clients-->
+<section class="clients-logo-section">
+    <div class="auto-container">
+    <div class="sec-title style-two text-center">
+            <span class="sec-title-dec"></span>
+            <h2 style="background: linear-gradient(90deg, #792987, #bd237e);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+            Our Clients & Partners</h2>
+            <div class="text" style="color: white;">Flusterd impressive man farcrud open inside punitively
+                around after wasteful  telling coldly spokel squid hesitantly  gibbered some tyrans.
+            </div>
+        </div>
+        <!--Sponsors Carousel-->
+        <div class="theme_carousel owl-theme owl-carousel"
+            data-options='{"loop": true, "margin": 40, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 300, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "2" }, "768" :{ "items" : "3" } , "992":{ "items" : "4" }, "1200":{ "items" : "5" }}}'>
+            <div class="slide-item">
+                <div class="image"><img src="../static/assets/img/clients/clients-1.jpg" alt=""></div>
+            </div>
+            <div class="slide-item">
+                <div class="image"><img src="../static/assets/img/clients/clients-2.jpg" alt=""></div>
+            </div>
+            <div class="slide-item">
+                <div class="image"><img src="../static/assets/img/clients/clients-3.jpg" alt=""></div>
+            </div>
+            <div class="slide-item">
+                <div class="image"><img src="../static/assets/img/clients/clients-4.jpg" alt=""></div>
+            </div>
+            <div class="slide-item">
+                <div class="image"><img src="../static/assets/img/clients/clients-5.jpg" alt=""></div>
+            </div>
+            <div class="slide-item">
+                <div class="image"><img src="../static/assets/img/clients/clients-6.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Clients-->
+
+{% endblock %}
