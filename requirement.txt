@@ -18,3 +18,4 @@ trio
 typing_extensions
 urllib3
 Werkzeug
+gunicorn
